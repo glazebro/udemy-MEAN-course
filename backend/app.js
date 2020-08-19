@@ -10,7 +10,9 @@ const { retryWhen } = require("rxjs/operators");
 
 const app = express();
 
-mongoose.connect("mongodb+srv://mike:0etzWSeA80dhS1e8@cluster0.l6roy.mongodb.net/node-angular?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://mike:" +
+ process.env.MONGO_ATLAS_PW 
+ + "@cluster0.l6roy.mongodb.net/node-angular?retryWrites=true&w=majority")
 .then(() => {
     console.log('Connected to database!');
 })
