@@ -92,6 +92,7 @@ export class PostsService {
         creator: null
       };
     }
+   // console.log(postData);
     this.http
       .put(BACKEND_URL + id, postData)
       .subscribe(response => {
